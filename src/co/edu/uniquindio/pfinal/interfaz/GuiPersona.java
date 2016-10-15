@@ -321,180 +321,179 @@ public class GuiPersona extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTxtEdadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtEdadKeyTyped
-        miEmpresa.espaciosVacios(evt, jTxtEdad);
+//        miEmpresa.espaciosVacios(evt, jTxtEdad);
     }//GEN-LAST:event_jTxtEdadKeyTyped
 
     private void jtNombreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtNombreMousePressed
-        if (evt.getClickCount() == 2) {
-
-            jtApellido.setEnabled(false);
-            jtNombre.setEnabled(true);
-            jtDireccion.setEnabled(false);
-            jtEmail.setEnabled(false);
-            jtTelefono.setEnabled(false);
-            jtPw.setEnabled(false);
-        }
+//        if (evt.getClickCount() == 2) {
+//
+//            jtApellido.setEnabled(false);
+//            jtNombre.setEnabled(true);
+//            jtDireccion.setEnabled(false);
+//            jtEmail.setEnabled(false);
+//            jtTelefono.setEnabled(false);
+//            jtPw.setEnabled(false);
+//        }
     }//GEN-LAST:event_jtNombreMousePressed
 
     private void jtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNombreKeyTyped
-        miEmpresa.espaciosVacios(evt, jtNombre);
-        miEmpresa.noTeclearNumeros(evt);
-        miEmpresa.noteclearCaracteres(evt);
+//        miEmpresa.espaciosVacios(evt, jtNombre);
+//        miEmpresa.noTeclearNumeros(evt);
+//        miEmpresa.noteclearCaracteres(evt);
     }//GEN-LAST:event_jtNombreKeyTyped
 
     private void jtApellidoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtApellidoMousePressed
-        if (evt.getClickCount() == 2) {
-
-            jtApellido.setEnabled(true);
-            jtNombre.setEnabled(false);
-            jtDireccion.setEnabled(false);
-            jtEmail.setEnabled(false);
-            jtTelefono.setEnabled(false);
-            jtPw.setEnabled(false);
-        }
+//        if (evt.getClickCount() == 2) {
+//
+//            jtApellido.setEnabled(true);
+//            jtNombre.setEnabled(false);
+//            jtDireccion.setEnabled(false);
+//            jtEmail.setEnabled(false);
+//            jtTelefono.setEnabled(false);
+//            jtPw.setEnabled(false);
+//        }
     }//GEN-LAST:event_jtApellidoMousePressed
 
     private void jtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtApellidoKeyTyped
-        miEmpresa.espaciosVacios(evt, jtApellido);
-        miEmpresa.noTeclearNumeros(evt);
-        miEmpresa.noteclearCaracteres(evt);
+//        miEmpresa.espaciosVacios(evt, jtApellido);
+//        miEmpresa.noTeclearNumeros(evt);
+//        miEmpresa.noteclearCaracteres(evt);
     }//GEN-LAST:event_jtApellidoKeyTyped
 
     private void jtTelefonoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtTelefonoMousePressed
-        if (evt.getClickCount() == 2) {
-
-            jtApellido.setEnabled(false);
-            jtNombre.setEnabled(false);
-            jtDireccion.setEnabled(false);
-            jtEmail.setEnabled(false);
-            jtTelefono.setEnabled(true);
-            jtPw.setEnabled(false);
-        }
-
+//        if (evt.getClickCount() == 2) {
+//
+//            jtApellido.setEnabled(false);
+//            jtNombre.setEnabled(false);
+//            jtDireccion.setEnabled(false);
+//            jtEmail.setEnabled(false);
+//            jtTelefono.setEnabled(true);
+//            jtPw.setEnabled(false);
+//        }
     }//GEN-LAST:event_jtTelefonoMousePressed
-
+//
     private void jtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtTelefonoKeyTyped
-        miEmpresa.espaciosVacios(evt, jtTelefono);
-        miEmpresa.noTeclearLetras(evt);
-        miEmpresa.noteclearCaracteres(evt);
+//        miEmpresa.espaciosVacios(evt, jtTelefono);
+//        miEmpresa.noTeclearLetras(evt);
+//        miEmpresa.noteclearCaracteres(evt);
     }//GEN-LAST:event_jtTelefonoKeyTyped
 
     private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
-        try {
-            String cedula = jTxtEdad.getText();
-            if (cedula.equals("")) {
-                throw new NullPointerException("La casilla esta vacia");
-            }
-            String password = jtPw.getText();
-            if (password.equals("")) {
-                throw new NullPointerException("La casilla esta vacia");
-            }
-            String nombre = jtNombre.getText();
-            if (nombre.equals("")) {
-                throw new NullPointerException("La casilla esta vacia");
-            }
-            String apellido = jtApellido.getText();
-            if (apellido.equals("")) {
-                throw new NullPointerException("La casilla esta vacia");
-            }
-            String direccion = jtDireccion.getText();
-            if (direccion.equals("")) {
-                throw new NullPointerException("La casilla esta vacia");
-            }
-            String telefono = jtTelefono.getText();
-            if (telefono.equals("")) {
-                throw new NullPointerException("La casilla esta vacia");
-            }
-            String email = jtEmail.getText();
-            if (email.equals("")) {
-                throw new NullPointerException("La casilla esta vacia");
-            }
-
-            if (imagenPersona != null) {
-                System.out.println("Entro a 1");
-                Persona per = new Persona(cedula, nombre, apellido, password, email,
-                        direccion, telefono, 0, imagenPersona);
-                System.out.println("Entro a 2");
-                if (persona == null) {
-                    System.out.println("Entro a 3");
-                    boolean guardar = miEmpresa.guardarPersona(per, null);
-                    if (guardar) {
-                        miEmpresa.mostrarMensaje("Se ha agregado ");
-                        persona = per;
-                        controlRetorno = true;
-                        this.dispose();
-                    }
-                } else {
-                    boolean guardar = miEmpresa.guardarPersona(per, persona.getCedula());
-                    if (guardar) {
-                        controlRetorno = true;
-                        jTxtEdad.setText("");
-                        jtApellido.setText("");
-                        jtNombre.setText("");
-                        jtDireccion.setText("");
-                        jtEmail.setText("");
-                        jtTelefono.setText("");
-                        jtPw.setText("");
-                        jLblFoto.setIcon(null);
-                        miEmpresa.mostrarMensaje("Se ha agregado el Vinculado");
-                    }
-
-                    jTxtEdad.setText("");
-                    jtApellido.setText("");
-                    jtNombre.setText("");
-                    jtDireccion.setText("");
-                    jtEmail.setText("");
-                    jtTelefono.setText("");
-                    jtPw.setText("");
-                    jLblFoto.setIcon(null);
-                    miEmpresa.mostrarMensaje("Se ha agregado el Vinculado");
-
-                }
-
-            } else {
-                throw new NullPointerException("Ingrese una imagen");
-            }
-
-        } catch (NullPointerException npe) {
-            miEmpresa.mostrarMensajeError(npe.getMessage());
-        }
+//        try {
+//            String cedula = jTxtEdad.getText();
+//            if (cedula.equals("")) {
+//                throw new NullPointerException("La casilla esta vacia");
+//            }
+//            String password = jtPw.getText();
+//            if (password.equals("")) {
+//                throw new NullPointerException("La casilla esta vacia");
+//            }
+//            String nombre = jtNombre.getText();
+//            if (nombre.equals("")) {
+//                throw new NullPointerException("La casilla esta vacia");
+//            }
+//            String apellido = jtApellido.getText();
+//            if (apellido.equals("")) {
+//                throw new NullPointerException("La casilla esta vacia");
+//            }
+//            String direccion = jtDireccion.getText();
+//            if (direccion.equals("")) {
+//                throw new NullPointerException("La casilla esta vacia");
+//            }
+//            String telefono = jtTelefono.getText();
+//            if (telefono.equals("")) {
+//                throw new NullPointerException("La casilla esta vacia");
+//            }
+//            String email = jtEmail.getText();
+//            if (email.equals("")) {
+//                throw new NullPointerException("La casilla esta vacia");
+//            }
+//
+//            if (imagenPersona != null) {
+//                System.out.println("Entro a 1");
+//                Persona per = new Persona(cedula, nombre, apellido, password, email,
+//                        direccion, telefono, 0, imagenPersona);
+//                System.out.println("Entro a 2");
+//                if (persona == null) {
+//                    System.out.println("Entro a 3");
+//                    boolean guardar = miEmpresa.guardarPersona(per, null);
+//                    if (guardar) {
+//                        miEmpresa.mostrarMensaje("Se ha agregado ");
+//                        persona = per;
+//                        controlRetorno = true;
+//                        this.dispose();
+//                    }
+//                } else {
+//                    boolean guardar = miEmpresa.guardarPersona(per, persona.getCedula());
+//                    if (guardar) {
+//                        controlRetorno = true;
+//                        jTxtEdad.setText("");
+//                        jtApellido.setText("");
+//                        jtNombre.setText("");
+//                        jtDireccion.setText("");
+//                        jtEmail.setText("");
+//                        jtTelefono.setText("");
+//                        jtPw.setText("");
+//                        jLblFoto.setIcon(null);
+//                        miEmpresa.mostrarMensaje("Se ha agregado el Vinculado");
+//                    }
+//
+//                    jTxtEdad.setText("");
+//                    jtApellido.setText("");
+//                    jtNombre.setText("");
+//                    jtDireccion.setText("");
+//                    jtEmail.setText("");
+//                    jtTelefono.setText("");
+//                    jtPw.setText("");
+//                    jLblFoto.setIcon(null);
+//                    miEmpresa.mostrarMensaje("Se ha agregado el Vinculado");
+//
+//                }
+//
+//            } else {
+//                throw new NullPointerException("Ingrese una imagen");
+//            }
+//
+//        } catch (NullPointerException npe) {
+//            miEmpresa.mostrarMensajeError(npe.getMessage());
+//        }
     }//GEN-LAST:event_btGuardarActionPerformed
 
     private void jtEmailMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtEmailMousePressed
-        if (evt.getClickCount() == 2) {
-
-            jtApellido.setEnabled(false);
-            jtNombre.setEnabled(false);
-            jtDireccion.setEnabled(false);
-            jtEmail.setEnabled(true);
-            jtTelefono.setEnabled(false);
-            jtPw.setEnabled(false);
-        }
+//        if (evt.getClickCount() == 2) {
+//
+//            jtApellido.setEnabled(false);
+//            jtNombre.setEnabled(false);
+//            jtDireccion.setEnabled(false);
+//            jtEmail.setEnabled(true);
+//            jtTelefono.setEnabled(false);
+//            jtPw.setEnabled(false);
+//        }
     }//GEN-LAST:event_jtEmailMousePressed
 
     private void jtEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtEmailKeyTyped
-        miEmpresa.espaciosVacios(evt, jtPw);
+//        miEmpresa.espaciosVacios(evt, jtPw);
     }//GEN-LAST:event_jtEmailKeyTyped
 
     private void btModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModificarActionPerformed
-        try {
-
-            String id = jTxtEdad.getText();
-            String nombre = jtNombre.getText();
-            String apellido = jtApellido.getText();
-            String direccion = jtDireccion.getText();
-            String telefono = jtTelefono.getText();
-            String pw = jtPw.getText();
-            String email = jtEmail.getText();
-            ImageIcon foto = imagenPersona;
-            Persona p = new Persona(id, nombre, apellido, pw, email,
-                    direccion, telefono, 0, foto);
-            miEmpresa.editarPersona(persona.getCedula(), p);
-
-        } catch (Exception ex) {
-            miEmpresa.mostrarMensajeError(ex.getMessage());
-
-        }
+//        try {
+//
+//            String id = jTxtEdad.getText();
+//            String nombre = jtNombre.getText();
+//            String apellido = jtApellido.getText();
+//            String direccion = jtDireccion.getText();
+//            String telefono = jtTelefono.getText();
+//            String pw = jtPw.getText();
+//            String email = jtEmail.getText();
+//            ImageIcon foto = imagenPersona;
+//            Persona p = new Persona(id, nombre, apellido, pw, email,
+//                    direccion, telefono, 0, foto);
+//            miEmpresa.editarPersona(persona.getCedula(), p);
+//
+//        } catch (Exception ex) {
+//            miEmpresa.mostrarMensajeError(ex.getMessage());
+//
+//        }
     }//GEN-LAST:event_btModificarActionPerformed
 
     private void btCargarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCargarFotoActionPerformed
